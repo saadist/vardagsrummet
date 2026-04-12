@@ -1,0 +1,22 @@
+{
+  "name": "vardagsrummet",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "scripts": {
+    "clean": "rm public/bundle.js",
+    "bundle": "esbuild src/main.js --bundle --outfile=public/bundle.js",
+    "serve": "npm run bundle && http-server",
+    "deploy": "firebase deploy --only hosting",
+    "deploy-all": "firebase deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "firebase": "^12.12.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.0",
+    "http-server": "14.1.1"
+  }
+}
