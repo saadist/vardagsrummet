@@ -1,0 +1,200 @@
+html,
+body {
+    background: linear-gradient(90deg, rgb(74, 144, 226) 50%, rgb(207, 232, 255) 150%);
+    background-color: rgb(74, 144, 226);
+}
+
+header {
+    background: linear-gradient(90deg, rgb(74, 144, 226) 50%, rgb(207, 232, 255) 150%);
+}
+
+dialog,
+main {
+    background: radial-gradient(circle, rgb(207, 232, 255) 0%, rgb(74, 144, 226) 100%);
+}
+
+dialog {
+    border-radius: 1rem;
+}
+
+dialog main {
+    background: radial-gradient(circle, rgb(207, 232, 255) 0%, rgb(74, 144, 226) 200%);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 2rem;
+}
+
+h1 {
+    font-family: fantasy;
+    color: orange;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+}
+
+p.error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+dialog p,
+dialog ul {
+    margin: 0;
+}
+
+dialog ul {
+    margin-bottom: 1rem;
+}
+
+
+body>footer {
+    background: linear-gradient(90deg, rgb(207, 232, 255) -50%, rgb(74, 144, 226) 50%);
+    justify-content: center;
+}
+
+header.hidden output {
+    visibility: hidden;
+}
+
+#words-panel {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: min(18rem, 40vh);
+    gap: 1px 1rem;
+    padding: 1rem;
+    margin: 0.5rem 1rem;
+    border: 2px solid rgb(0, 90, 140);
+    border-radius: 6px;
+    background: radial-gradient(circle at center bottom, #cfe8ff 0%, #4a90e2 100%);
+    align-content: center;
+}
+
+/* @media (orientation: portrait),
+(min-width: 769px) {
+    #words-panel {
+        align-self: center;
+    }
+}
+ */
+
+#words-panel .word {
+    display: flex;
+    gap: 1px;
+    perspective: 1000px;
+}
+
+#words-panel .word.hidden {
+    color: transparent;
+}
+
+#words-panel .word.secret span {
+    background-color: gold;
+}
+
+#words-panel .word.failed span {
+    background-color: pink;
+}
+
+#words-panel .word span {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-family: monospace;
+    font-weight: bold;
+    box-sizing: border-box;
+    height: 24px;
+    width: 24px;
+    font-size: 19px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#words-panel .word.reveal span {
+    animation: reveal 1.5s ease forwards;
+}
+
+@keyframes reveal {
+    from {
+        transform: rotateY(180deg);
+        color: transparent;
+    }
+
+    to {
+        transform: rotateY(0deg);
+        color: black;
+    }
+}
+
+.square {
+    display: inline-block;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
+    max-width: 4rem;
+    max-height: 4rem;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.slot1 {
+    background-image: url(uppertile.svg);
+    padding: 3px;
+}
+
+.slot2 {
+    background-image: url(lowertile.svg);
+    height: 3.25rem;
+    width: 3.25rem;
+    margin: 3px;
+}
+
+.square>button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: radial-gradient(circle at top left, #f0f0f0, #bdbdbd 60%, #8e8e8e);
+    box-shadow: inset 0.1rem 0.1rem 0.3rem rgba(255, 255, 255, 0.6), inset -0.2rem -0.2rem 0.4rem rgba(0, 0, 0, 0.25), 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+}
+
+#word-input {
+    margin-bottom: 1rem;
+}
+
+#next-button {
+    font-size: 1.1rem;
+}
+
+#submit-button {
+    height: 4rem;
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+    #next-button {
+        position: fixed;
+        top: 3px;
+        right: 3px;
+    }
+
+    body>footer {
+        justify-content: end;
+    }
+}

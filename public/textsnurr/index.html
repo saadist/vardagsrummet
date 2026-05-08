@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <html lang="sv" translate="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="HandheldFriendly" content="true" />
+
+    <title>TextSnurr</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="textsnurr.css">
+</head>
+
+<body class="auto notouch">
+    <header class="hidden">
+        <!-- <a class="button" href="/" style="width:3rem;text-align: center;">&#8801;</a> -->
+         <a class="button" href="/" style="width:3rem;text-align: center;">←</a>
+        <output class="column fancy-text small">
+            <div>Runda: </div>
+            <div id="round">?</div>
+        </output>
+        <output class="column fancy-text">
+            <div>Poäng: </div>
+            <div id="score">?</div>
+        </output>
+        <output class="column fancy-text small">
+            <div>Hiscore: </div>
+            <div id="hiscore">?</div>
+        </output>
+        <div>
+            <button id="next-button" tabindex="-1">Starta</button>
+        </div>
+    </header>
+    <main class="column space-evenly">
+        <section id="words-panel">
+            <h1>TEXT SNURR <span style="color: white;font-style:italic;font-size:smaller">3.0</span></h1>
+        </section>
+        <div id="word-output" class="row" style="justify-content: center;">
+        </div>
+        <div id="word-input" class="row wrap" style="justify-content: center;">
+        </div>
+    </main>
+
+    <footer>
+        <div class="row auto" style="gap:1rem;align-items:center;">
+            <button id="erase-button" style="width:7rem" tabindex="-1">⌫</button>
+            <div class="grow"></div>
+            <button id="submit-button" style="width:7rem" tabindex="-1">⏎</button>
+        </div>
+    </footer>
+
+    <div class="grow"></div>
+    <dialog id="word-dialog">
+        <div class="row">
+            <main style="overflow-y:scroll;"></main>
+            <footer>
+                <button id="word-dialog-close" autofocus style="float:right">Stäng</button>
+            </footer>
+        </div>
+    </dialog>
+
+    <script src=" bundle.js"></script>
+</body>
+
+</html>
